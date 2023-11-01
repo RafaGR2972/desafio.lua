@@ -31,7 +31,7 @@ local lifeAttribute = 7
 local speedAttribute = 7
 local intelegenceAttribute = 7
 
--- Cartão
+-- Função que recebe um atributo e nos retorna uma barra de progresso em string / texto
 local function getProgressBar(attribute)
     local fullChar = "◻️"
     local emptyChar = "◼️"
@@ -46,6 +46,7 @@ local function getProgressBar(attribute)
     return result
 end
 
+-- Cartão
 print("===============================")
 print("|")
 print("| " .. monsterName)
