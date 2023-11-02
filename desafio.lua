@@ -12,7 +12,7 @@
 
 ]]
 
--- Habilita UTF-8 no terminal
+-- Habilita UTF-8 no terminal e limpa
 os.execute("chcp 65001")  
 os.execute("cls")
 
@@ -21,15 +21,26 @@ local monsterName = "MEDUSA"
 local description = "Um ser monstruoso pela sua aparência horrenda e por transformar em pedra todos os que a olhavam."
 local emoji = "🐍"
 local sound = "Tsssss"
-local favoriteTime = "Noturno"
-local weapon = "Olhar petrificante"
+local lair = "No interior de uma caverna."
+local weapon = "Olhar petrificante."
 
 -- Atributos
-local attackAttribute = 10
-local defenseAttribute = 5
-local lifeAttribute = 7
+local attackAttribute
+local defenseAttribute
+local lifeAttribute = 8
 local speedAttribute = 7
-local intelegenceAttribute = 7
+local intelegenceAttribute = 6
+local function weakPoint(enemy)
+    if enemy == "Perseu" then
+        defenseAttribute = 2
+        attackAttribute = 7
+    else
+        defenseAttribute = 5
+        attackAttribute = 10
+        return defenseAttribute
+    end
+end
+weakPoint("Perseu")
 
 -- Função que recebe um atributo e nos retorna uma barra de progresso em string / texto
 local function getProgressBar(attribute)
@@ -58,7 +69,7 @@ print("| " .. monsterName)
 print("| " .. description)
 print("| Emoji favorito: " .. emoji)
 print("| Som: " .. sound)
-print("| Horário favorito: " .. favoriteTime)
+print("| Lair: " .. lair)
 print("| Weapon: " .. weapon)
 print("|")
 print("| Atributos")
