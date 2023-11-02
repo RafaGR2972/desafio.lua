@@ -33,11 +33,10 @@ local intelegenceAttribute = 6
 local function weakPoint(enemy)
     if enemy == "Perseu" then
         defenseAttribute = 2
-        attackAttribute = 7
+        attackAttribute = 5
     else
         defenseAttribute = 5
         attackAttribute = 10
-        return defenseAttribute
     end
 end
 weakPoint("Perseu")
