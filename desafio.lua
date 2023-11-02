@@ -46,8 +46,13 @@ local function getProgressBar(attribute)
     return result
 end
 
+-- Função que recebe uma string x vezes
+local function repeatString(str)
+    print(string.rep(str, 31))
+end
+
 -- Cartão
-print("===============================")
+repeatString("=")
 print("|")
 print("| " .. monsterName)
 print("| " .. description)
@@ -63,4 +68,4 @@ print("|    Vida:         " .. getProgressBar(lifeAttribute))
 print("|    Velocidade:   " .. getProgressBar(speedAttribute))
 print("|    Inteligência: " .. getProgressBar(intelegenceAttribute))
 print("|")
-print("===============================")
+repeatString("=")
